@@ -155,6 +155,14 @@ h2, h3 {
     margin:0;
 }
 
+.farkledh3 {
+  font-family: 'DynaPuff', cursive;
+  color: white;
+  font-size: 30px;
+  text-shadow: 1px 1px 4px #282c34;
+  margin-top:10px;
+}
+
 .scoreTextBox {
   display: flex;
   flex-direction: row;
@@ -183,26 +191,30 @@ h2, h3 {
 }
 
 .scoreTextGrey {
-  color: #777
+  color: #777;
+  margin:0;
+  padding:3px;
+
 }
 
 .keepScoreText {
   color: #444;
   text-align: center;
   font-size: 18px;
-  margin-top: 0;
+  margin: 0;
+  padding: 3px;
 }
 
 .playAgain {
   font-size: 18px;
   /* background-color: aqua; */
-  border: 3px solid #890072;;
+  border: 3px solid #777;;
   padding: 10px 15px;
   margin: 20px auto;
   border-radius: 15px;
   width: 140px;
-  color: white;
-  background-color: #ff00d4;
+  background-color: white;
+  color: #777;
 }
 
 .flexCenter {
@@ -210,4 +222,15 @@ h2, h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.highScore {
+  position:absolute;
+  top: 10px;
+  left: 15%;
+}
+
+.totals {
+  margin:5px;
+  padding:0;
 }

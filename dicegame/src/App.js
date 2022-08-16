@@ -16,6 +16,13 @@ function App() {
   }
 
   function diceReRoll() {
+
+    const newScore = total.reduce( (partial,a) => partial + a, 0) + keepResult.score
+    if( newScore > highScore) {
+      setHighScore(newScore);
+      setNewHighScore(true);
+    }
+
     let array = [];
     for (let i = 0; i < 6; i++) {
       if(!diceArray[i].keep) {
@@ -55,6 +62,7 @@ function App() {
     setFullResult({ "score": 0, "scoreString": ""});
     setKeepResult({ "score": 0, "scoreString": ""});
     setTotal([])
+    setNewHighScore(false);
   }
 
   const [diceArray, setDiceArray] = useState(()=>diceInitialise());
@@ -62,6 +70,8 @@ function App() {
   const [fullResult, setFullResult] = useState({ "score": 0, "scoreString": ""});
   const [keepResult, setKeepResult] = useState({ "score": 0, "scoreString": ""});
   const [total, setTotal] = useState([])
+  const [highScore, setHighScore] = useState(0);
+  const [newHighScore, setNewHighScore] = useState(false)
 
   // const newKeepResult = obj => setKeepResult(obj);
   // const newFullResult = obj => setFullResult(obj);
@@ -83,10 +93,15 @@ function App() {
 
   return (
     <div className="App">
+      <div className="highScore">
+        <h2>{`High Score: ${highScore}`}</h2>
+      </div>
 
       <h1>Farkle</h1>
       <div className="lineUpButtons">
       <DiceBoard noOfRolls={noOfRolls} diceArray={diceArray} keepDiceToggle={keepDiceToggle} />
+      
+      { fullResult.score != 0 &&
       <div className="buttonBox">
 {/*         <button 
           className={`${keepResult.score == 0 ? "disable_button" : "active_button"} button`} 
@@ -105,7 +120,9 @@ function App() {
         </button>
 
       </div>
+}
       </div>
+      
       <div className="scoreBox">
       <Score 
         diceArray={diceArray} 
@@ -115,6 +132,7 @@ function App() {
         fullResult={fullResult}
         total={total}
         playAgain={playAgain}
+        newHighScore={newHighScore}
       />
       </div>
       

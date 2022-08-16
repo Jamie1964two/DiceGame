@@ -10,7 +10,10 @@ export default function Score(props) {
 
         return(
             <div className="flexCenter">
-                <h2 className="farkled">"No score - You're FARKLED!"</h2>
+                <h2 className="farkled">You're FARKLED!</h2>
+                {props.newHighScore && 
+                <h3 className="farkledh3">New High Score!</h3>
+                }   
                 <button className="playAgain" onClick={props.playAgain}>Play Again</button>
             </div>
         ) 
@@ -42,18 +45,18 @@ export default function Score(props) {
             <div className="scoreTextBox">
                 <div>
                     <div className="fullKeepBox fullBox">
-                        <h3>Roll:</h3>
+                        <h3 className="totals">Roll:</h3>
                         {scoreLinesTotal}
                     </div>
-                    <h4 className="keepScoreText">{`Total: ${props.total}`}</h4>
+                    <h4 className="keepScoreText">{`Total: ${props.total.reduce( (partialSum, a) => partialSum + a, 0)}`}</h4>
                 </div>
                 <div className="fullKeepBox fullBox">
-                    <h3>On table:</h3>
+                    <h3 className="totals">On table:</h3>
                     {scoreLinesFull}
                 </div>
                 <div>
                     <div className="fullKeepBox">
-                        <h3 className="scoreText">Held:</h3>
+                        <h3 className="scoreText totals">Held:</h3>
                         {scoreLinesKeep}
                     </div>
                     <h4 className="keepScoreText">{`Total: ${props.keepResult.score}`}</h4>
