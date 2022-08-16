@@ -20,10 +20,10 @@ export default function Dice(props) {
     const keepDiceToggle = props.keepDiceToggle;
     const noOfRolls = props.noOfRolls;
 
-    console.log("dice value: " + value);
+    // console.log("dice value: " + value);
     
     const dicePattern = [[0,0,0,0,1,0,0,0,0],[0,0,1,0,0,0,1,0,0],[0,0,1,0,1,0,1,0,0,0],[1,0,1,0,0,0,1,0,1],[1,0,1,0,1,0,1,0,1],[1,0,1,1,0,1,1,0,1]]
-    const [roll, setRoll] = useState(value);
+    const [roll, setRoll] = useState(value-1);
     const [wobble, setWobble] = useState(true);
     //const [keep, setKeep] = useState(false);
 

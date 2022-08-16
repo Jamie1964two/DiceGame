@@ -19,6 +19,8 @@ code {
   background-color: red;
   position: relative;
   border-radius: 15%;
+  margin: 0px 5px;
+  box-shadow: 2px 2px darkred;
 }
 
 .grid{
@@ -85,7 +87,8 @@ code {
   }
   to {
     transform: scale(0.6,0.6);
-    background-color: #333;    
+    background-color: #333;   
+    box-shadow: 2px 2px #111; 
   }
 }
 
@@ -98,8 +101,8 @@ code {
   align-content: center;
   justify-content: space-evenly;
   flex-direction: row;
-  width: 80%;
-  height: 50%;
+  /* width: 80%; */
+  /* height: 50%; */
   max-width: 1000px;
   max-height: 400px;
   border: 5px solid #bbb;
@@ -111,8 +114,100 @@ code {
 .button {
   font-size: 16px;
   /* background-color: aqua; */
-  border: 2px solid rgb(0, 97, 97);
+  border: 3px solid #bbb;
   padding: 10px 15px;
-  margin: 10px 30px;
+  margin: 0px;
+  margin-left: 15px;
   border-radius: 15px;
+  width: 120px;
+  color: white;
+}
+
+.disable_button {
+  background-color: #ddd;
+}
+
+.active_button {
+  background-color: #972cfa;
+  border: 3px solid #40126c
+}
+
+
+.scoreBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.keepingScore {
+  font-size: 40px;
+}
+
+h2, h3 {
+  color: #777
+}
+
+.farkled {
+    font-family: 'DynaPuff', cursive;
+    color: #ff00d4;
+    font-size: 50px;
+    text-shadow: 2px 2px #282c34;
+    margin:0;
+}
+
+.scoreTextBox {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.fullKeepBox {
+  background-color: rgb(157, 81, 146);
+  border-radius: 8px;
+  border: 3px solid rgb(96, 49, 89);
+  margin: 10px;
+  padding: 5px;
+  width: 150px;
+  text-align: center;
+  justify-content: flex-start;
+}
+
+.fullBox {
+  background-color: white;
+  border: 3px solid #777;
+}
+
+.scoreText {
+  color: white;
+}
+
+.scoreTextGrey {
+  color: #777
+}
+
+.keepScoreText {
+  color: #444;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.playAgain {
+  font-size: 18px;
+  /* background-color: aqua; */
+  border: 3px solid #890072;;
+  padding: 10px 15px;
+  margin: 20px auto;
+  border-radius: 15px;
+  width: 140px;
+  color: white;
+  background-color: #ff00d4;
+}
+
+.flexCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
